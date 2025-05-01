@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "maintenanceissue")  // Connects exactly to your DB table
+@Table(name = "MaintenanceIssue")  // Connects exactly to your DB table
 public class MaintenanceIssue {
 
     @Id
