@@ -1,6 +1,6 @@
 package com.smartcampus.campusportal.dto;
 
-public class LoginRequest {
+public class StudentLoginRequest {
     private Integer studentID;
     private String password;
 

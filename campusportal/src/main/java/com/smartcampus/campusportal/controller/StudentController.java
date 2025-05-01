@@ -1,6 +1,6 @@
 package com.smartcampus.campusportal.controller;
 
-import com.smartcampus.campusportal.dto.LoginRequest;
+import com.smartcampus.campusportal.dto.StudentLoginRequest;
 import com.smartcampus.campusportal.model.Student;
 import com.smartcampus.campusportal.repository.StudentRepository;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +26,7 @@ public class StudentController {
     }
 
     @PostMapping("/login")
-    public Student login(@RequestBody LoginRequest loginRequest) {
+    public Student login(@RequestBody StudentLoginRequest loginRequest) {
         Student student = repo.findByStudentIDAndPassword(
                 loginRequest.getStudentID(), loginRequest.getPassword()
         );

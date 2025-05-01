@@ -1,12 +1,10 @@
 package com.smartcampus.campusportal.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity  // Mark this class as a JPA entity
+@Table(name = "Lecturer")
 public class Lecturer {
 
     @Id
@@ -15,6 +13,7 @@ public class Lecturer {
 
     private String fname;
     private String lname;
+    @Column(name = "Lecturer_Email")
     private String lecturerEmail; // Corrected column name
     private String password;
 
