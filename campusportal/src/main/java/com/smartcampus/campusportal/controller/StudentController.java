@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
-@RequestMapping("/api/students")
+@RequestMapping("/api/student")
 public class StudentController {
     private final StudentRepository repo;
 
@@ -15,12 +15,12 @@ public class StudentController {
         this.repo = repo;
     }
 
-    @GetMapping
+    @GetMapping("/get-all")
     public List<Student> getAll() {
         return repo.findAll();
     }
 
-    @PostMapping
+    @PostMapping("/add-stu")
     public Student save(@RequestBody Student student) {
         return repo.save(student);
     }
