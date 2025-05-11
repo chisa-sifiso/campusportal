@@ -65,7 +65,7 @@ public class MaintenanceIssueController {
      * Update the status of a maintenance issue.
      * If the status is changed to 'Closed', notify the student who reported it.
      */
-    @PutMapping("/{id}/status")
+    @PutMapping("/{id}/status-feedback")
     public ResponseEntity<?> updateIssueStatus(
             @PathVariable Integer id,
             @RequestParam String newStatus) {
