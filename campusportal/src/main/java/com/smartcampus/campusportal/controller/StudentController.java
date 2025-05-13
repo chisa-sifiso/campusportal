@@ -35,5 +35,13 @@ public class StudentController {
             return student; // Success: Return student details
         } else {
             throw new RuntimeException("Invalid Student ID or Password"); // Failed login
-        }
-}}
+        }         
+}
+
+    @GetMapping("/count")
+    public long count() {
+        return repo.count();
+    }    
+
+
+}

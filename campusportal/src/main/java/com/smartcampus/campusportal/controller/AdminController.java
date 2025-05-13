@@ -29,10 +29,13 @@ public class AdminController {
 
         // If admin is found with valid credentials
         if (admin != null) {
-            return ResponseEntity.ok(admin);  // Return Admin data if login is successful
-        } else {
             // Invalid credentials
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+        } else {
+
+
+            return ResponseEntity.ok(admin);  // Return Admin data if login is successful
+
         }
     }
 }
