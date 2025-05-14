@@ -9,6 +9,6 @@ import java.time.LocalDateTime;
 @Repository
 public interface MaintenanceIssueRepository extends JpaRepository<MaintenanceIssue, Integer> {
     // Later we can add custom queries if needed
-    long countByStatus(String status);
-    long countByCreatedAtBetween(LocalDateTime start, LocalDateTime end);
+//    long countByStatus(String status);
+//    long countByCreatedAtBetween(LocalDateTime start, LocalDateTime end);
 }

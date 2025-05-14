@@ -38,10 +38,10 @@ public class StudentController {
         }         
 }
 
-    @GetMapping("/count")
-    public long count() {
-        return repo.count();
-    }    
+//    @GetMapping("/count")
+//    public long count() {
+//        return repo.count();
+//    }
 
 
 }

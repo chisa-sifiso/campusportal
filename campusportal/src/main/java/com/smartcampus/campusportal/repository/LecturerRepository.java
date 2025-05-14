@@ -10,6 +10,6 @@ import java.time.LocalDateTime;
 public interface LecturerRepository extends JpaRepository<Lecturer, Integer> {
     // Custom query method to find Lecturer by Email and Password
     Lecturer findByLecturerEmailAndPassword(String lecturerEmail, String password);
-    long countByCreatedAtBetween(LocalDateTime start, LocalDateTime end);
+//    long countByCreatedAtBetween(LocalDateTime start, LocalDateTime end);
 
 }

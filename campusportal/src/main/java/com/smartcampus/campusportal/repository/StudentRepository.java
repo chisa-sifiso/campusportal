@@ -8,6 +8,6 @@ import java.util.Optional;
 
 public interface StudentRepository extends JpaRepository<Student, Integer> {
     Student findByStudentIDAndPassword(Integer studentID, String password);
-    long countByCreatedAtBetween(LocalDateTime start, LocalDateTime end);
+//    long countByCreatedAtBetween(LocalDateTime start, LocalDateTime end);
 
 }
