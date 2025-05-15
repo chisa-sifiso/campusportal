@@ -49,6 +49,7 @@ public class LecturerController {
         List<Timetable> timetables = timetableRepository.findByLecturer_LecturerID(lecturerId);
         return timetables.stream()
                 .map(tt -> new CourseModuleDTO(
+                        tt.getModule().getModuleID(),
                         tt.getModule().getModuleName(),
                         tt.getModule().getModuleCode()))
                 .distinct()

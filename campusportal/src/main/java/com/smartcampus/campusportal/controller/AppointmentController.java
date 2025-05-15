@@ -1,5 +1,6 @@
 package com.smartcampus.campusportal.controller;
 
+import com.smartcampus.campusportal.dto.AppointmentDTO;
 import com.smartcampus.campusportal.dto.AppointmentRequestDTO;
 import com.smartcampus.campusportal.model.*;
 import com.smartcampus.campusportal.repository.*;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/appointment")
@@ -101,5 +104,20 @@ public class AppointmentController {
         notificationRecipientRepository.save(recipient);
 
         return ResponseEntity.ok("Appointment status updated and notification sent.");
+    }
+    @GetMapping("/gellAll-appointments")
+    public List<AppointmentDTO> getAllAppointments() {
+        List<Appointment> appointments = appointmentRepository.findAll();
+
+        return appointments.stream().map(appointment -> {
+            AppointmentDTO dto = new AppointmentDTO();
+            dto.setDate(appointment.getDate());
+            dto.setModuleCode(appointment.getModule().getModuleCode());
+            dto.setDate(appointment.getDate());
+            dto.setStartTime(appointment.getStartTime());
+            dto.setEndTime(appointment.getEndTime());
+            dto.setStatus(appointment.getStatus());
+            return dto;
+        }).collect(Collectors.toList());
     }
 }

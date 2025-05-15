@@ -10,12 +10,17 @@ public class AppointmentDTO {
     private LocalTime endTime;
     private String status;
 
+
+
     public AppointmentDTO(String moduleCode, LocalDate date, LocalTime startTime, LocalTime endTime, String status) {
         this.moduleCode = moduleCode;
         this.date = date;
         this.startTime = startTime;
         this.endTime = endTime;
         this.status = status;
+    }
+
+    public AppointmentDTO() {
     }
 
     public String getModuleCode() {
