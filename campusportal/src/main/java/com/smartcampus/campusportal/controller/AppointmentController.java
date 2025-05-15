@@ -82,9 +82,9 @@ public class AppointmentController {
 
         // ✅ Send notification based on new status
         String message;
-        if ("Approved".equalsIgnoreCase(status)) {
+        if ("Accept".equalsIgnoreCase(status)) {
             message = "Your session for module " + appointment.getModule().getModuleName() + " has been approved.";
-        } else if ("Cancelled".equalsIgnoreCase(status)) {
+        } else if ("Decline".equalsIgnoreCase(status)) {
             message = "Your session for module " + appointment.getModule().getModuleName() + " was not approved.";
         } else {
             return ResponseEntity.ok("Status updated without notification.");

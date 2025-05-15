@@ -9,8 +9,11 @@ public class AppointmentDTO {
     private LocalTime startTime;
     private LocalTime endTime;
     private String status;
+    private int studentId;
 
+    public void setStudentId() {
 
+    }
 
     public AppointmentDTO(String moduleCode, LocalDate date, LocalTime startTime, LocalTime endTime, String status) {
         this.moduleCode = moduleCode;
