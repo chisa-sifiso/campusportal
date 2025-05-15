@@ -31,7 +31,7 @@ public class CourseModule {
     }
 
     @Id
-
+    @Column(name = "ModuleID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer moduleID;
 

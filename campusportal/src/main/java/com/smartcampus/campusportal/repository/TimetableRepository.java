@@ -8,4 +8,5 @@ import java.util.List;
 @Repository
 public interface TimetableRepository extends JpaRepository<Timetable, Integer> {
     List<Timetable> findByLecturer_LecturerID(Integer lecturerID);
+    List<Timetable> findByModule_ModuleIDIn(List<Long> moduleIds);
 }

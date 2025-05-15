@@ -2,14 +2,12 @@ package com.smartcampus.campusportal.model;
 
 import jakarta.persistence.*;
 import java.time.LocalTime;
-import lombok.Getter;
-import lombok.Setter;
+
 @Entity
 @Table(name = "Timetable")
 public class Timetable {
 
     @Id
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer timetableID;
 
@@ -23,8 +21,19 @@ public class Timetable {
 
     private String day;
 
-    private LocalTime time;
+    @Column(nullable = false)
+    private LocalTime startTime;
 
+    @Column(nullable = false)
+    private LocalTime endTime;
+
+    public Integer getTimetableID() {
+        return timetableID;
+    }
+
+    public void setTimetableID(Integer timetableID) {
+        this.timetableID = timetableID;
+    }
 
     public Lecturer getLecturer() {
         return lecturer;
@@ -42,14 +51,6 @@ public class Timetable {
         this.module = module;
     }
 
-    public LocalTime getTime() {
-        return time;
-    }
-
-    public void setTime(LocalTime time) {
-        this.time = time;
-    }
-
     public String getDay() {
         return day;
     }
@@ -58,11 +59,36 @@ public class Timetable {
         this.day = day;
     }
 
-    public Integer getTimetableID() {
-        return timetableID;
+    public LocalTime getEndTime() {
+        return endTime;
     }
 
-    public void setTimetableID(Integer timetableID) {
-        this.timetableID = timetableID;
+    public void setEndTime(LocalTime endTime) {
+        this.endTime = endTime;
     }
+
+//    public LocalTime getTime() {
+//        return time;
+//    }
+//
+//    public void setTime(LocalTime time) {
+//        this.time = time;
+//    }
+
+    public LocalTime getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(LocalTime startTime) {
+        this.startTime = startTime;
+    }
+
+//    private LocalTime time;
+
+
+
+    // Getters and Setters
+
+
+
 }
