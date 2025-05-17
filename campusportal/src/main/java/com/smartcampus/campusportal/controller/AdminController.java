@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001"})
 @RestController
 @RequestMapping("/api/admins")
 public class AdminController {
@@ -27,13 +27,9 @@ public class AdminController {
 
         // If admin is found with valid credentials
         if (admin != null) {
-            // Invalid credentials
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+            return ResponseEntity.ok(admin); // ✅ Correct: valid admin
         } else {
-
-
-            return ResponseEntity.ok(admin);  // Return Admin data if login is successful
-
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials"); // ❌ Invalid
         }
     }
 }
