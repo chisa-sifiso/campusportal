@@ -223,9 +223,7 @@ npm start
 
 ---
 
-## Author
 
-This system was built by students using Spring Boot and React as part of a university Smart Campus project.
 
 ---
 
