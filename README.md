@@ -213,13 +213,7 @@ mvn spring-boot:run
 
 Make sure MySQL is running and the schema above is executed.
 
-### 2. Frontend (React)
 
-```bash
-cd frontend
-npm install
-npm start
-```
 
 ---
 
