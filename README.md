@@ -215,9 +215,6 @@ Make sure MySQL is running and the schema above is executed.
 
 
 
----
-
-
 
 ---
 
